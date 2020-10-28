@@ -6,13 +6,11 @@ import be.niedel.proto.employmentservice.contract.Id;
 import com.google.protobuf.InvalidProtocolBufferException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import static org.apache.tomcat.util.codec.binary.Base64.decodeBase64;
-import static org.apache.tomcat.util.codec.binary.Base64.encodeBase64String;
 import static org.springframework.http.HttpStatus.OK;
 
 @Controller
