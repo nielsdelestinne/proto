@@ -1,0 +1,7 @@
+POST http://localhost:8080/employer/create
+Accept: application/octet-stream
+Content-Type: application/octet-stream
+
+CgUKAzEyMxIFSmltbXk=
+
+###
