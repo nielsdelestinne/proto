@@ -1,0 +1,31 @@
+syntax = "proto3";
+option java_multiple_files = true;
+package be.niedel.proto.employmentservice.contract;
+
+import "common.proto";
+
+message CreateEmployeeRequest {
+  Id id = 1;
+  Name name = 2;
+  Address address = 3;
+}
+
+message Name {
+  string firstName = 1;
+  string lastName = 2;
+}
+
+message Address {
+  string street = 1;
+  string streetNumber = 2;
+  string municipality = 3;
+  string country = 4;
+}
+
+message CreateEmployeeResponse {
+  Id id = 1;
+}
+
+service Employee {
+  rpc createEmployee(CreateEmployeeRequest) returns (CreateEmployeeResponse);
+}

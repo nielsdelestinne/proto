@@ -1,0 +1,22 @@
+syntax = "proto3";
+option java_multiple_files = true;
+package be.niedel.proto.employmentservice.contract;
+
+// In Intellij, add current 'protobuf' directory to 'Import paths' in Protocol Buffer (Languages & Frameworks)
+import "common.proto";
+
+message CreateAgreementRequest {
+  Id id = 1;
+  Id employerId = 2;
+  Id employeeId = 3;
+  string statute = 4;
+  double wage = 5;
+}
+
+message CreateAgreementResponse {
+  Id id = 1;
+}
+
+service Agreement {
+  rpc createAgreement(CreateAgreementRequest) returns (CreateAgreementResponse);
+}
