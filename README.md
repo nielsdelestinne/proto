@@ -13,6 +13,21 @@ employment-service-contract as we want to build & release it (SemVer) and use it
     - The generated sources `.java` will be placed inside `target/generated-sources` and could be used by the module itself (in this scenario, not required as the module is purely dedicated to the contract itself).
     The generated `.class` files can be found in `target/classes` and they will be contained in the generated `.jar` file on which other modules can depend!
 
+### Use generated files & Setup controller
+1. From module employment-service, add a dependency to the employment-service-contract (current version 1.0.0). This way,
+we'll have a dependency on the generated jar which contains all the generated files from our `.proto` file.
+2. Create a basic spring boot setup, nothing to fancy (web & data starter with h2 in-memory)
+3. Create a controller, not a rest controller as we are not striving for a RESTful web service. It's much more RPC.
+4. Because it's difficult to send in a byte[] array as the request body, we send in a Base64 encoded string of a byte array.
+5. We do return a byte[] array (be it as part of a ResponseEntity, so the toString method is not called on the byte[]).
+6. Use the `createEmployer.http` to create an employer (the base64 string is generated on startup: see `EmploymentServiceApplication`).
+7. The bytes are returned, you can inspect the h2 console on `http://localhost:8080/h2-console` to see the data is correctly persisted.
+
+Open questions:
+- [ ] How about different encodings & compression: GZIP
+- [ ] What about size & speed compared with json, can we make a different employment-service-json?
+- [ ] What about a consumer module (payroll)?  
+
 ### Extending a Protocol buffer
 
 > https://developers.google.com/protocol-buffers/docs/javatutorial#extending-a-protocol-buffer
