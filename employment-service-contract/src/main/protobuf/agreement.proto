@@ -16,7 +16,3 @@ message CreateAgreementRequest {
 message CreateAgreementResponse {
   Id id = 1;
 }
-
-service Agreement {
-  rpc createAgreement(CreateAgreementRequest) returns (CreateAgreementResponse);
-}

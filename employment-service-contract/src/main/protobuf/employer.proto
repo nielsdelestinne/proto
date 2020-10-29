@@ -12,7 +12,3 @@ message CreateEmployerRequest {
 message CreateEmployerResponse {
   Id id = 1;
 }
-
-service Employer {
-  rpc createEmployer(CreateEmployerRequest) returns (CreateEmployerResponse);
-}

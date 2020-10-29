@@ -25,7 +25,3 @@ message Address {
 message CreateEmployeeResponse {
   Id id = 1;
 }
-
-service Employee {
-  rpc createEmployee(CreateEmployeeRequest) returns (CreateEmployeeResponse);
-}
