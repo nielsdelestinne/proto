@@ -15,6 +15,7 @@
     <properties>
         <spring-boot-starter.version>2.3.4.RELEASE</spring-boot-starter.version>
         <h2.version>1.4.200</h2.version>
+        <jakarta.xml.bind-api.version>2.3.3</jakarta.xml.bind-api.version>
     </properties>
 
 
@@ -39,6 +40,12 @@
             <scope>runtime</scope>
             <version>${h2.version}</version>
         </dependency>
+        <dependency>
+            <groupId>jakarta.xml.bind</groupId>
+            <artifactId>jakarta.xml.bind-api</artifactId>
+            <version>${jakarta.xml.bind-api.version}</version>
+        </dependency>
+
     </dependencies>
 
 </project>

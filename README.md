@@ -30,6 +30,10 @@ We can create builds and generate artifacts `.jar` for our contract and version 
 - We could have opted to just version and share the `.proto` files and let the different consuming modules generated the sources.
 This would have multiple downsides, such as for one: consuming modules would require the protobuf compiler (maven plugin).
 
+### Todo
+- [ ] Backwards compatible: what if employmentClient still sends out CreateEmployerRequests (byte[]) of contract v1.0.0,
+but the employment-service has renamed field Name to FullName in version v2.0.0 (should work...)
+
 ### Questions
 
 Open questions:
