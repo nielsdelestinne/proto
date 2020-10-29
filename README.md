@@ -23,6 +23,15 @@ we'll have a dependency on the generated jar which contains all the generated fi
 6. Use the `createEmployer.http` to create an employer (the base64 string is generated on startup: see `EmploymentServiceApplication`).
 7. The bytes are returned, you can inspect the h2 console on `http://localhost:8080/h2-console` to see the data is correctly persisted.
 
+### Sharing the proto file, or the generated classes?
+We created a separate module (employment-service-contract) that contains the `.proto` files and generates the java 
+classes which are packaged inside of the `.jar`. Other modules / projects depending on this module, will have access to these generated sources.
+We can create builds and generate artifacts `.jar` for our contract and version them based the SemVer strategy.  
+- We could have opted to just version and share the `.proto` files and let the different consuming modules generated the sources.
+This would have multiple downsides, such as for one: consuming modules would require the protobuf compiler (maven plugin).
+
+### Questions
+
 Open questions:
 - [ ] How about different encodings & compression: GZIP
 - [ ] What about size & speed compared with json, can we make a different employment-service-json?
