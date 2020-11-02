@@ -2,7 +2,6 @@ package be.niedel.proto.recruitmentservice;
 
 import be.niedel.proto.employmentservice.contract.CreateEmployerRequest;
 import be.niedel.proto.employmentservice.contract.CreateEmployerResponse;
-import be.niedel.proto.employmentservice.contract.Id;
 import com.google.protobuf.InvalidProtocolBufferException;
 
 import java.net.URI;
@@ -12,7 +11,8 @@ import java.net.http.HttpResponse;
 import java.util.concurrent.CompletableFuture;
 
 import static be.niedel.proto.employmentservice.contract.CreateEmployerResponse.parseFrom;
-import static org.apache.tomcat.util.codec.binary.Base64.encodeBase64String;
+import static java.net.http.HttpRequest.BodyPublishers.ofString;
+import static java.util.Base64.getEncoder;
 
 public class EmploymentClient {
 
@@ -28,13 +28,7 @@ public class EmploymentClient {
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create(EMPLOYMENT_URL))
                 .header("Content-Type", "application/octet-stream")
-                .POST(HttpRequest.BodyPublishers.ofString(
-                        encodeBase64String(CreateEmployerRequest.newBuilder()
-                                .setId(Id.newBuilder().setValue("123"))
-                                .setName("Jimmy")
-                                .build()
-                                .toByteArray()
-                        )))
+                .POST(ofString(getEncoder().encodeToString(createEmployerRequest.toByteArray())))
                 .build();
 
         return client.sendAsync(request, HttpResponse.BodyHandlers.ofString())
@@ -46,7 +40,6 @@ public class EmploymentClient {
                         throw new IllegalArgumentException("Unable to parse: " + e.getMessage());
                     }
                 });
-
     }
 
 }

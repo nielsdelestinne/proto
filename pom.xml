@@ -15,8 +15,6 @@
         <maven.compiler.target>14</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <!-- dependency versions -->
-        <employment-service-contract.version>1.0.0</employment-service-contract.version>
     </properties>
 
     <modules>
@@ -24,15 +22,5 @@
         <module>employment-service-contract</module>
         <module>recruitment-service</module>
     </modules>
-
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>be.niedel</groupId>
-                <artifactId>employment-service-contract</artifactId>
-                <version>${employment-service-contract.version}</version>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
 
 </project>
