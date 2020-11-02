@@ -48,6 +48,14 @@ will be persisted. This is due to the fact that the protobuf message is serializ
 Although now sending a request from the recruitment-service with `name: Harry Potter` and having a server accepting `fullName`, the actual value is correctly persisted in the database.
 - Fire up the EmploymentService, launch the request by starting the RecruitmentService, inspect the database of EmploymentService using `http://localhost:8080/h2-console`.
 
+Protobuf is both backward & forward compatible.
+- JSON can support forward compatibility by adding @JsonIgnoreProperties(ignoreUnknown = true)
+- JSON can support (limited) backward compatibility (v2 can have a field v1 does not have. But v2 can not rename an existing field)
+
+More information on Backward & Forward compatibility:
+- https://www.beautifulcode.co/blog/88-backward-and-forward-compatibility-protobuf-versioning-serialization
+- https://simplicable.com/new/backward-compatibility-vs-forward-compatibility#:~:text=Backward%20compatibility%20is%20a%20design,the%20same%20data%20and%20equipment.&text=Forward%20compatibility%20is%20a%20design,with%20future%20versions%20of%20itself.
+
 
 ### Questions
 
