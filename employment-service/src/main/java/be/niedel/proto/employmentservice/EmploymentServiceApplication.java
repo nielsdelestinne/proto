@@ -2,7 +2,6 @@ package be.niedel.proto.employmentservice;
 
 import be.niedel.proto.employmentservice.contract.CreateEmployerRequest;
 import be.niedel.proto.employmentservice.contract.Id;
-import org.apache.tomcat.util.codec.binary.Base64;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -25,7 +24,7 @@ public class EmploymentServiceApplication {
             System.out.println(
                     encodeBase64String(CreateEmployerRequest.newBuilder()
                             .setId(Id.newBuilder().setValue("123"))
-                            .setName("Jimmy")
+                            .setFullName("Jimmy")
                             .build()
                             .toByteArray())
             );

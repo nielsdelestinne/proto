@@ -30,9 +30,24 @@ We can create builds and generate artifacts `.jar` for our contract and version 
 - We could have opted to just version and share the `.proto` files and let the different consuming modules generated the sources.
 This would have multiple downsides, such as for one: consuming modules would require the protobuf compiler (maven plugin).
 
-### Todo
-- [ ] Backwards compatible: what if employmentClient still sends out CreateEmployerRequests (byte[]) of contract v1.0.0,
-but the employment-service has renamed field Name to FullName in version v2.0.0 (should work...)
+### Backward compatibility
+- We tagged the repository with tag `1.0.0`, in this version both the provider ('server', employment) as the consumer ('client', recruitment) use 
+the proto contract (employment-service-contract) 1.0.0 version.
+- We tagged a later version of the repository with tag `2.0.0`, in this version we updated the proto contract of employer by changing the field `name` to `fullName`.
+This is released as the employment-service-contract 2.0.0 version. The employment-service (provider) upgraded to this version and had to change the compilation errors (getName() -> getFullName()).
+The consumer (recruitment-service) remains on version 1.0.0 of the contract.
+
+> Run `store-in-local-m2-repository.bat` to install the 1.0.0 version (`employment-service-contract/artifacts/employment-service-contract-1.0.0-jar-with-dependencies.jar`) into the local m2 repository.
+> This way, it can still be used by the consumer.
+
+Although the change to the proto contract was a rename of a field, it is (as far as protobuf is concerned) a non-breaking change.
+- Messages sent from the provider using the v1.0.0 of the contract (`name`) to the provider (v2.0.0, `fullName`) will be accepted and the actual value for `fullName` 
+will be persisted. This is due to the fact that the protobuf message is serialized into a binary format using only the field numbers (`2`) not the field names `name` / `fullName`.
+- The generated java code will however be breaking (getName()) -> getFullName()), and thus when using SemVer, a rename to a field will be a breaking change (to Java, not Protobuf)
+
+Although now sending a request from the recruitment-service with `name: Harry Potter` and having a server accepting `fullName`, the actual value is correctly persisted in the database.
+- Fire up the EmploymentService, launch the request by starting the RecruitmentService, inspect the database of EmploymentService using `http://localhost:8080/h2-console`.
+
 
 ### Questions
 
