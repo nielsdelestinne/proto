@@ -6,7 +6,16 @@ import "common.proto";
 
 message CreateEmployerRequest {
   Id id = 1;
-  string fullName = 2;
+  string employerName = 2;
+  EmployerSize size = 3;
+  bool isFamilyOwned = 4;
+}
+
+enum EmployerSize {
+  SMALL = 0;
+  MEDIUM = 1;
+  LARGE = 2;
+  XLARGE = 3;
 }
 
 message CreateEmployerResponse {

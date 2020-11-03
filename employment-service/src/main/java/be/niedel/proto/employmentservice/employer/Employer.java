@@ -11,21 +11,37 @@ public class Employer {
     private String id;
 
     @Column
-    private String name;
+    private String employerName;
+
+    @Column
+    private String size;
+
+    @Column
+    private boolean isFamilyOwned;
 
     protected Employer() {
     }
 
-    public Employer(String id, String name) {
+    public Employer(String id, String employerName, String size, boolean isFamilyOwned) {
         this.id = id;
-        this.name = name;
+        this.employerName = employerName;
+        this.size = size;
+        this.isFamilyOwned = isFamilyOwned;
     }
 
     public String getId() {
         return id;
     }
 
-    public String getName() {
-        return name;
+    public String getEmployerName() {
+        return employerName;
+    }
+
+    public String getSize() {
+        return size;
+    }
+
+    public boolean isFamilyOwned() {
+        return isFamilyOwned;
     }
 }

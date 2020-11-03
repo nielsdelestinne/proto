@@ -30,7 +30,9 @@ public class EmployerController {
         var employer = employerRepository.save(
                 new Employer(
                         createEmployerRequest.getId().getValue(),
-                        createEmployerRequest.getFullName()));
+                        createEmployerRequest.getEmployerName(),
+                        createEmployerRequest.getSize().toString(),
+                        createEmployerRequest.getIsFamilyOwned()));
 
         return new ResponseEntity<>(
                 CreateEmployerResponse.newBuilder()

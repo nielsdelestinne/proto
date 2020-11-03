@@ -25,6 +25,7 @@ public class EmploymentClient {
     }
 
     public CompletableFuture<CreateEmployerResponse> createEmployer(CreateEmployerRequest createEmployerRequest) {
+        System.out.println(createEmployerRequest.toString());
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create(EMPLOYMENT_URL))
                 .header("Content-Type", "application/octet-stream")

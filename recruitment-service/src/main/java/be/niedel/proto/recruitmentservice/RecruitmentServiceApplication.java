@@ -13,7 +13,7 @@ public class RecruitmentServiceApplication {
         employmentClient.createEmployer(
                 CreateEmployerRequest.newBuilder()
                         .setId(Id.newBuilder().setValue("123"))
-                        .setName("Harry Potter")
+                        .setName("Building Corporation Y")
                         .build())
                 .thenAccept(response -> {
                     System.out.println(response);
