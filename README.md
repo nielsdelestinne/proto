@@ -30,7 +30,7 @@ We can create builds and generate artifacts `.jar` for our contract and version 
 - We could have opted to just version and share the `.proto` files and let the different consuming modules generated the sources.
 This would have multiple downsides, such as for one: consuming modules would require the protobuf compiler (maven plugin).
 
-### Backward compatibility
+### Backward & Forward Compatibility
 - We tagged the repository with tag `1.0.0`, in this version both the provider ('server', employment) as the consumer ('client', recruitment) use 
 the proto contract (employment-service-contract) 1.0.0 version.
 - We tagged a later version of the repository with tag `2.0.0`, in this version we updated the proto contract of employer by changing the field `name` to `fullName`.
@@ -42,11 +42,19 @@ The consumer (recruitment-service) remains on version 1.0.0 of the contract.
 
 Although the change to the proto contract was a rename of a field, it is (as far as protobuf is concerned) a non-breaking change.
 - Messages sent from the provider using the v1.0.0 of the contract (`name`) to the provider (v2.0.0, `fullName`) will be accepted and the actual value for `fullName` 
-will be persisted. This is due to the fact that the protobuf message is serialized into a binary format using only the field numbers (`2`) not the field names `name` / `fullName`.
+will be persisted. This is due to the fact that the protobuf message is serialized into a binary format using only the tag numbers (`2`) not the field names `name` / `fullName`.
 - The generated java code will however be breaking (getName()) -> getFullName()), and thus when using SemVer, a rename to a field will be a breaking change (to Java, not Protobuf)
 
 Although now sending a request from the recruitment-service with `name: Harry Potter` and having a server accepting `fullName`, the actual value is correctly persisted in the database.
 - Fire up the EmploymentService, launch the request by starting the RecruitmentService, inspect the database of EmploymentService using `http://localhost:8080/h2-console`.
+
+The above scenario is an example is Protocol buffers being backward compatible
+- The old (v1.0.0) definition of the protocol buffer sent by the client is accepted and even 'correctly' processed by the server which is on definition v2.0.0.
+- _The input is designed for an older version of the system, but still accepted & processed by a newer version of that same system._
+
+Protobuf is also forward compatible, and can be demonstrated by the following example:
+- A newer version (v2.0.0) of the protocol buffer is send by the client and is accepted and correctly processed by the server that is still expected v1.0.0.
+- _an implementation (server using protocol buffers) that uses an older version of the message processes a future version of the message._
 
 Protobuf is both backward & forward compatible.
 - JSON can support forward compatibility by adding @JsonIgnoreProperties(ignoreUnknown = true)
@@ -55,7 +63,8 @@ Protobuf is both backward & forward compatible.
 More information on Backward & Forward compatibility:
 - https://www.beautifulcode.co/blog/88-backward-and-forward-compatibility-protobuf-versioning-serialization
 - https://simplicable.com/new/backward-compatibility-vs-forward-compatibility#:~:text=Backward%20compatibility%20is%20a%20design,the%20same%20data%20and%20equipment.&text=Forward%20compatibility%20is%20a%20design,with%20future%20versions%20of%20itself.
-
+- https://en.wikipedia.org/wiki/Backward_compatibility
+- https://en.wikipedia.org/wiki/Forward_compatibility
 
 ### Questions
 
