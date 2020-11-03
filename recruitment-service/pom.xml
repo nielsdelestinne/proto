@@ -13,7 +13,7 @@
     <artifactId>recruitment-service</artifactId>
 
     <properties>
-        <employment-service-contract.version>1.0.0</employment-service-contract.version>
+        <employment-service-contract.version>2.0.0</employment-service-contract.version>
     </properties>
 
     <dependencies>

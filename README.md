@@ -33,7 +33,7 @@ This would have multiple downsides, such as for one: consuming modules would req
 ### Backward & Forward Compatibility
 - We tagged the repository with tag `1.0.0`, in this version both the provider ('server', employment) as the consumer ('client', recruitment) use 
 the proto contract (employment-service-contract) 1.0.0 version.
-- We tagged a later version of the repository with tag `2.0.0`, in this version we updated the proto contract of employer by changing the field `name` to `employerName`.
+- We tagged a later version of the repository with tag `2.0.0-backward-compatibility`, in this version we updated the proto contract of employer by changing the field `name` to `employerName`.
 This is released as the employment-service-contract 2.0.0 version. The employment-service (provider) upgraded to this version and had to change the compilation errors (getName() -> getFullName()).
 The consumer (recruitment-service) remains on version 1.0.0 of the contract.
 
@@ -73,6 +73,21 @@ The above scenario is an example is Protocol buffers being backward compatible
 Protobuf is also forward compatible, and can be demonstrated by the following example:
 - A newer version (v2.0.0) of the protocol buffer is sent by the client and is accepted and correctly processed by the server that is still expecting v1.0.0.
 - _an implementation (server using protocol buffers) that uses an older version of the message processes a future version of the message._
+- (checkout git tag 2.0.0-forward-compatibility)
+- Sent (v2.0.0)
+```
+id {
+  value: "123"
+}
+employerName: "Building Corporation Y"
+size: MEDIUM
+isFamilyOwned: true
+```
+- Persisted (v1.0.0)
+```
+| ID    |  	NAME                    |  
+| 123   |	Building Corporation Y  |
+```
 
 So, how about JSON?
 - JSON allows for backward compatibility (but its more up to the developer)

@@ -1,7 +1,6 @@
 package be.niedel.proto.employmentservice;
 
 import be.niedel.proto.employmentservice.contract.CreateEmployerRequest;
-import be.niedel.proto.employmentservice.contract.EmployerSize;
 import be.niedel.proto.employmentservice.contract.Id;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -25,9 +24,7 @@ public class EmploymentServiceApplication {
             System.out.println(
                     encodeBase64String(CreateEmployerRequest.newBuilder()
                             .setId(Id.newBuilder().setValue("123"))
-                            .setEmployerName("Large Corp XY")
-                            .setSize(EmployerSize.LARGE)
-                            .setIsFamilyOwned(true)
+                            .setName("Large Corp XY")
                             .build()
                             .toByteArray())
             );

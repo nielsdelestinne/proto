@@ -1,6 +1,7 @@
 package be.niedel.proto.recruitmentservice;
 
 import be.niedel.proto.employmentservice.contract.CreateEmployerRequest;
+import be.niedel.proto.employmentservice.contract.EmployerSize;
 import be.niedel.proto.employmentservice.contract.Id;
 
 import java.util.Arrays;
@@ -13,7 +14,9 @@ public class RecruitmentServiceApplication {
         employmentClient.createEmployer(
                 CreateEmployerRequest.newBuilder()
                         .setId(Id.newBuilder().setValue("123"))
-                        .setName("Building Corporation Y")
+                        .setEmployerName("Building Corporation Y")
+                        .setIsFamilyOwned(true)
+                        .setSize(EmployerSize.MEDIUM)
                         .build())
                 .thenAccept(response -> {
                     System.out.println(response);
