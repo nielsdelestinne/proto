@@ -13,6 +13,14 @@ public class ComparisonApplication {
         byte[] encodeFromProtoGeneratedObjectToBytesUsingProtoEncoding = comparisonService.encodeFromProtoGeneratedObjectToBytesUsingProtoEncoding(employerRequest);
         byte[] encodeFromJSONToBytesUsingUtf8 = comparisonService.encodeFromStringToBytesUsingUtf8(comparisonService.toJSON(employerRequest));
 
+        byte[] someText = comparisonService.encodeFromStringToBytesUsingUtf8("abcdef");
+        System.out.println("Size: " + Arrays.toString(someText).length());
+        System.out.println("Compressed size (GZIP): " + compressedSizeComparisonService.compressUsingGzip(someText).length);
+
+        byte[] someTextWithAlotOfDuplication = comparisonService.encodeFromStringToBytesUsingUtf8("abcdefabcdefabcdef");
+        System.out.println("Size: " + Arrays.toString(someTextWithAlotOfDuplication).length());
+        System.out.println("Compressed size (GZIP): " + compressedSizeComparisonService.compressUsingGzip(someTextWithAlotOfDuplication).length);
+
         displayResults(
                 encodeFromStringToBytesUsingUtf8,
                 employerRequest.toString(),
