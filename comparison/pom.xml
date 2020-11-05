@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <artifactId>proto</artifactId>
+        <groupId>be.niedel</groupId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>comparison</artifactId>
+
+    <properties>
+        <employment-service-contract.version>2.0.0</employment-service-contract.version>
+        <protobuf-java.version>3.13.0</protobuf-java.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>be.niedel</groupId>
+            <artifactId>employment-service-contract</artifactId>
+            <version>${employment-service-contract.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.protobuf</groupId>
+            <artifactId>protobuf-java-util</artifactId>
+            <version>${protobuf-java.version}</version>
+        </dependency>
+    </dependencies>
+
+</project>

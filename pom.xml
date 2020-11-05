@@ -21,6 +21,7 @@
         <module>employment-service</module>
         <module>employment-service-contract</module>
         <module>recruitment-service</module>
+        <module>comparison</module>
     </modules>
 
 </project>

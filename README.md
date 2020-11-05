@@ -102,10 +102,20 @@ More information on Backward & Forward compatibility:
 - https://en.wikipedia.org/wiki/Backward_compatibility
 - https://en.wikipedia.org/wiki/Forward_compatibility
 
+### Size comparison
+- For the same amount of data (a CreateEmployerRequest) the JSON (using UTF-8 encoding) measures 125 bytes, 
+the proto encoded object counts 35 bytes.
+
+### GZIP compression
+- Using GZIP, it highly depends on the data if it will have a positive impact on the encoded proto object.
+- When there is a lot of repeated data in strings,... it will have a positive impact on the size.
+However, in other scenarios such as is the case in `ComparisonApplication`, the size actually increased from 35 -> 55 bytes
+- JSON went down from 125 to 123 bytes after compression  
+
 ### Questions
 
 Open questions:
-- [ ] How about different encodings & compression: GZIP
+- [x] How about different encodings & compression: GZIP
 - [ ] What about size & speed compared with json, can we make a different employment-service-json?
 - [ ] What about a consumer module (payroll)?  
 
