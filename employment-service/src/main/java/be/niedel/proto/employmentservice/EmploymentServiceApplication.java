@@ -8,6 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 
+import static be.niedel.proto.employmentservice.contract.EmployerSize.MEDIUM;
 import static org.apache.tomcat.util.codec.binary.Base64.encodeBase64String;
 
 @SpringBootApplication
@@ -24,7 +25,9 @@ public class EmploymentServiceApplication {
             System.out.println(
                     encodeBase64String(CreateEmployerRequest.newBuilder()
                             .setId(Id.newBuilder().setValue("123"))
-                            .setName("Large Corp XY")
+                            .setEmployerName("Large Corp XY")
+                            .setSize(MEDIUM)
+                            .setIsFamilyOwned(true)
                             .build()
                             .toByteArray())
             );
