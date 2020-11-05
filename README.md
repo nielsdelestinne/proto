@@ -107,7 +107,7 @@ More information on Backward & Forward compatibility:
 the proto encoded object counts 35 bytes.
 
 ### GZIP compression
-- Using GZIP, it highly depends on the data if it will have a positive impact on the encoded proto object.
+- Using GZIP, **it highly depends on the data** if it will have a positive impact on the encoded proto object.
 - When there is a lot of repeated data in strings,... it will have a positive impact on the size.
 However, in other scenarios such as is the case in `ComparisonApplication`, the size actually increased from 35 -> 55 bytes
 - JSON went down from 125 to 123 bytes after compression  
