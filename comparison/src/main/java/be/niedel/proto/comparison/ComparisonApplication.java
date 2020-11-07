@@ -3,7 +3,7 @@ package be.niedel.proto.comparison;
 import be.niedel.proto.employmentservice.contract.CreateEmployerRequest;
 import com.google.protobuf.GeneratedMessageV3;
 
-import static be.niedel.proto.comparison.ComparisonUtility.*;
+import static be.niedel.proto.comparison.SizeAndCompressionComparisonUtility.*;
 
 public class ComparisonApplication {
 

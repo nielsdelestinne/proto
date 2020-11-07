@@ -115,9 +115,7 @@ However, in other scenarios such as is the case in `ComparisonApplication`, the 
 ### Questions
 
 Open questions:
-- [x] How about different encodings & compression: GZIP
 - [ ] What about size & speed compared with json, can we make a different employment-service-json?
-- [ ] What about a consumer module (payroll)?  
 
 ### Extending a Protocol buffer
 
