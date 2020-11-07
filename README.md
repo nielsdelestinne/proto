@@ -116,6 +116,10 @@ However, in other scenarios such as is the case in `ComparisonApplication`, the 
 Measured using JMH: see `DeserializationComparisonApplication` & `x-results.txt` files.
 - http://tutorials.jenkov.com/java-performance/jmh.html
 
+### Serialization performance
+Measured using JMH: see `SerializationComparisonApplication` & `x-results.txt` files.
+- JsonPrinter has bad performance, but should only be used for manual testing needs. Not PRD code. 
+
 ### Questions
 
 Open questions:

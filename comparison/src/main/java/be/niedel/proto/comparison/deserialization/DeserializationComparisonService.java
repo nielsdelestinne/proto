@@ -18,8 +18,8 @@ public class DeserializationComparisonService {
     @Warmup(iterations = 1)
     @Measurement(iterations = 2)
     @BenchmarkMode(Mode.All)
-    @OutputTimeUnit(TimeUnit.MILLISECONDS)
-    public void deserializeJSONStringBenchmark(BenchmarkState state, Blackhole blackhole) throws IOException {
+    @OutputTimeUnit(TimeUnit.MICROSECONDS)
+    public void deserializeJSONString(BenchmarkState state, Blackhole blackhole) throws IOException {
         var result = deserializeJSONString(state, state.getJSONString(), EmployeeTO.class);
         blackhole.consume(result);
     }
@@ -29,8 +29,8 @@ public class DeserializationComparisonService {
     @Warmup(iterations = 1)
     @Measurement(iterations = 2)
     @BenchmarkMode(Mode.All)
-    @OutputTimeUnit(TimeUnit.MILLISECONDS)
-    public void deserializeUtf8EncodedBinaryJSONMessageBenchmark(BenchmarkState state, Blackhole blackhole) throws IOException {
+    @OutputTimeUnit(TimeUnit.MICROSECONDS)
+    public void deserializeUtf8EncodedBinaryJSONMessage(BenchmarkState state, Blackhole blackhole) throws IOException {
         var result = deserializeUtf8EncodedBinaryJSONMessage(state, state.getUtf8EncodedBytes(), EmployeeTO.class);
         blackhole.consume(result);
     }
@@ -40,7 +40,7 @@ public class DeserializationComparisonService {
     @Warmup(iterations = 1)
     @Measurement(iterations = 2)
     @BenchmarkMode(Mode.All)
-    @OutputTimeUnit(TimeUnit.MILLISECONDS)
+    @OutputTimeUnit(TimeUnit.MICROSECONDS)
     public void deserializeProtoEncodedBinaryMessage(BenchmarkState state, Blackhole blackhole) throws InvalidProtocolBufferException {
         var result = deserializeProtoEncodedBinaryMessage(state.getProtoEncodedBytes());
         blackhole.consume(result);

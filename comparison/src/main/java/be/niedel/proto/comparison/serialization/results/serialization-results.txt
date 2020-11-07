@@ -1,0 +1,765 @@
+"C:\Program Files\Java\jdk-14.0.1\bin\java.exe" "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2020.1.1\lib\idea_rt.jar=63711:C:\Program Files\JetBrains\IntelliJ IDEA 2020.1.1\bin" -Dfile.encoding=UTF-8 -classpath D:\repos\proto\comparison\target\classes;D:\repos\proto\employment-service-contract\target\classes;C:\Users\niels\.m2\repository\com\google\protobuf\protobuf-java\3.13.0\protobuf-java-3.13.0.jar;C:\Users\niels\.m2\repository\com\google\protobuf\protobuf-java-util\3.13.0\protobuf-java-util-3.13.0.jar;C:\Users\niels\.m2\repository\com\google\guava\guava\29.0-android\guava-29.0-android.jar;C:\Users\niels\.m2\repository\com\google\guava\failureaccess\1.0.1\failureaccess-1.0.1.jar;C:\Users\niels\.m2\repository\com\google\guava\listenablefuture\9999.0-empty-to-avoid-conflict-with-guava\listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar;C:\Users\niels\.m2\repository\com\google\code\findbugs\jsr305\3.0.2\jsr305-3.0.2.jar;C:\Users\niels\.m2\repository\org\checkerframework\checker-compat-qual\2.5.5\checker-compat-qual-2.5.5.jar;C:\Users\niels\.m2\repository\com\google\j2objc\j2objc-annotations\1.3\j2objc-annotations-1.3.jar;C:\Users\niels\.m2\repository\com\google\errorprone\error_prone_annotations\2.3.4\error_prone_annotations-2.3.4.jar;C:\Users\niels\.m2\repository\com\google\code\gson\gson\2.8.6\gson-2.8.6.jar;C:\Users\niels\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.11.3\jackson-databind-2.11.3.jar;C:\Users\niels\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.11.3\jackson-annotations-2.11.3.jar;C:\Users\niels\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.11.3\jackson-core-2.11.3.jar;C:\Users\niels\.m2\repository\org\openjdk\jmh\jmh-core\1.25.2\jmh-core-1.25.2.jar;C:\Users\niels\.m2\repository\net\sf\jopt-simple\jopt-simple\4.6\jopt-simple-4.6.jar;C:\Users\niels\.m2\repository\org\apache\commons\commons-math3\3.2\commons-math3-3.2.jar be.niedel.proto.comparison.serialization.SerializationComparisonApplication
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.openjdk.jmh.util.Utils (file:/C:/Users/niels/.m2/repository/org/openjdk/jmh/jmh-core/1.25.2/jmh-core-1.25.2.jar) to field java.io.PrintStream.charOut
+WARNING: Please consider reporting this to the maintainers of org.openjdk.jmh.util.Utils
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+# JMH version: 1.25.2
+# VM version: JDK 14.0.1, OpenJDK 64-Bit Server VM, 14.0.1+7
+# VM invoker: C:\Program Files\Java\jdk-14.0.1\bin\java.exe
+# VM options: -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2020.1.1\lib\idea_rt.jar=63711:C:\Program Files\JetBrains\IntelliJ IDEA 2020.1.1\bin -Dfile.encoding=UTF-8
+# Warmup: 1 iterations, 10 s each
+# Measurement: 2 iterations, 10 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: be.niedel.proto.comparison.serialization.SerializationComparisonService.serializeToJSONStringUsingJackson
+
+# Run progress: 0,00% complete, ETA 00:12:00
+# Warmup Fork: 1 of 1
+# Warmup Iteration   1: 1,670 ops/us
+Iteration   1: 1,688 ops/us
+Iteration   2: 1,703 ops/us
+
+# Run progress: 4,17% complete, ETA 00:12:00
+# Fork: 1 of 1
+# Warmup Iteration   1: 1,692 ops/us
+Iteration   1: 1,719 ops/us
+Iteration   2: 1,725 ops/us
+
+
+Result "be.niedel.proto.comparison.serialization.SerializationComparisonService.serializeToJSONStringUsingJackson":
+  1,722 ops/us
+
+
+# JMH version: 1.25.2
+# VM version: JDK 14.0.1, OpenJDK 64-Bit Server VM, 14.0.1+7
+# VM invoker: C:\Program Files\Java\jdk-14.0.1\bin\java.exe
+# VM options: -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2020.1.1\lib\idea_rt.jar=63711:C:\Program Files\JetBrains\IntelliJ IDEA 2020.1.1\bin -Dfile.encoding=UTF-8
+# Warmup: 1 iterations, 10 s each
+# Measurement: 2 iterations, 10 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: be.niedel.proto.comparison.serialization.SerializationComparisonService.serializeToJSONStringUsingProtoJsonPrinter
+
+# Run progress: 8,33% complete, ETA 00:11:25
+# Warmup Fork: 1 of 1
+# Warmup Iteration   1: 0,264 ops/us
+Iteration   1: 0,268 ops/us
+Iteration   2: 0,270 ops/us
+
+# Run progress: 12,50% complete, ETA 00:10:52
+# Fork: 1 of 1
+# Warmup Iteration   1: 0,267 ops/us
+Iteration   1: 0,276 ops/us
+Iteration   2: 0,274 ops/us
+
+
+Result "be.niedel.proto.comparison.serialization.SerializationComparisonService.serializeToJSONStringUsingProtoJsonPrinter":
+  0,275 ops/us
+
+
+# JMH version: 1.25.2
+# VM version: JDK 14.0.1, OpenJDK 64-Bit Server VM, 14.0.1+7
+# VM invoker: C:\Program Files\Java\jdk-14.0.1\bin\java.exe
+# VM options: -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2020.1.1\lib\idea_rt.jar=63711:C:\Program Files\JetBrains\IntelliJ IDEA 2020.1.1\bin -Dfile.encoding=UTF-8
+# Warmup: 1 iterations, 10 s each
+# Measurement: 2 iterations, 10 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: be.niedel.proto.comparison.serialization.SerializationComparisonService.serializeToJSONUtf8EncodedBytesUsingJackson
+
+# Run progress: 16,67% complete, ETA 00:10:21
+# Warmup Fork: 1 of 1
+# Warmup Iteration   1: 1,621 ops/us
+Iteration   1: 1,635 ops/us
+Iteration   2: 1,636 ops/us
+
+# Run progress: 20,83% complete, ETA 00:09:49
+# Fork: 1 of 1
+# Warmup Iteration   1: 1,594 ops/us
+Iteration   1: 1,591 ops/us
+Iteration   2: 1,583 ops/us
+
+
+Result "be.niedel.proto.comparison.serialization.SerializationComparisonService.serializeToJSONUtf8EncodedBytesUsingJackson":
+  1,587 ops/us
+
+
+# JMH version: 1.25.2
+# VM version: JDK 14.0.1, OpenJDK 64-Bit Server VM, 14.0.1+7
+# VM invoker: C:\Program Files\Java\jdk-14.0.1\bin\java.exe
+# VM options: -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2020.1.1\lib\idea_rt.jar=63711:C:\Program Files\JetBrains\IntelliJ IDEA 2020.1.1\bin -Dfile.encoding=UTF-8
+# Warmup: 1 iterations, 10 s each
+# Measurement: 2 iterations, 10 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: be.niedel.proto.comparison.serialization.SerializationComparisonService.serializeToProtoEncodedBytes
+
+# Run progress: 25,00% complete, ETA 00:09:18
+# Warmup Fork: 1 of 1
+# Warmup Iteration   1: 4,928 ops/us
+Iteration   1: 4,973 ops/us
+Iteration   2: 4,979 ops/us
+
+# Run progress: 29,17% complete, ETA 00:08:47
+# Fork: 1 of 1
+# Warmup Iteration   1: 4,964 ops/us
+Iteration   1: 5,012 ops/us
+Iteration   2: 5,042 ops/us
+
+
+Result "be.niedel.proto.comparison.serialization.SerializationComparisonService.serializeToProtoEncodedBytes":
+  5,027 ops/us
+
+
+# JMH version: 1.25.2
+# VM version: JDK 14.0.1, OpenJDK 64-Bit Server VM, 14.0.1+7
+# VM invoker: C:\Program Files\Java\jdk-14.0.1\bin\java.exe
+# VM options: -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2020.1.1\lib\idea_rt.jar=63711:C:\Program Files\JetBrains\IntelliJ IDEA 2020.1.1\bin -Dfile.encoding=UTF-8
+# Warmup: 1 iterations, 10 s each
+# Measurement: 2 iterations, 10 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: be.niedel.proto.comparison.serialization.SerializationComparisonService.serializeToJSONStringUsingJackson
+
+# Run progress: 33,33% complete, ETA 00:08:16
+# Warmup Fork: 1 of 1
+# Warmup Iteration   1: 0,601 us/op
+Iteration   1: 0,587 us/op
+Iteration   2: 0,587 us/op
+
+# Run progress: 37,50% complete, ETA 00:07:45
+# Fork: 1 of 1
+# Warmup Iteration   1: 0,594 us/op
+Iteration   1: 0,586 us/op
+Iteration   2: 0,586 us/op
+
+
+Result "be.niedel.proto.comparison.serialization.SerializationComparisonService.serializeToJSONStringUsingJackson":
+  0,586 us/op
+
+
+# JMH version: 1.25.2
+# VM version: JDK 14.0.1, OpenJDK 64-Bit Server VM, 14.0.1+7
+# VM invoker: C:\Program Files\Java\jdk-14.0.1\bin\java.exe
+# VM options: -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2020.1.1\lib\idea_rt.jar=63711:C:\Program Files\JetBrains\IntelliJ IDEA 2020.1.1\bin -Dfile.encoding=UTF-8
+# Warmup: 1 iterations, 10 s each
+# Measurement: 2 iterations, 10 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: be.niedel.proto.comparison.serialization.SerializationComparisonService.serializeToJSONStringUsingProtoJsonPrinter
+
+# Run progress: 41,67% complete, ETA 00:07:14
+# Warmup Fork: 1 of 1
+# Warmup Iteration   1: 3,712 us/op
+Iteration   1: 3,610 us/op
+Iteration   2: 3,592 us/op
+
+# Run progress: 45,83% complete, ETA 00:06:43
+# Fork: 1 of 1
+# Warmup Iteration   1: 3,731 us/op
+Iteration   1: 3,630 us/op
+Iteration   2: 3,622 us/op
+
+
+Result "be.niedel.proto.comparison.serialization.SerializationComparisonService.serializeToJSONStringUsingProtoJsonPrinter":
+  3,626 us/op
+
+
+# JMH version: 1.25.2
+# VM version: JDK 14.0.1, OpenJDK 64-Bit Server VM, 14.0.1+7
+# VM invoker: C:\Program Files\Java\jdk-14.0.1\bin\java.exe
+# VM options: -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2020.1.1\lib\idea_rt.jar=63711:C:\Program Files\JetBrains\IntelliJ IDEA 2020.1.1\bin -Dfile.encoding=UTF-8
+# Warmup: 1 iterations, 10 s each
+# Measurement: 2 iterations, 10 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: be.niedel.proto.comparison.serialization.SerializationComparisonService.serializeToJSONUtf8EncodedBytesUsingJackson
+
+# Run progress: 50,00% complete, ETA 00:06:12
+# Warmup Fork: 1 of 1
+# Warmup Iteration   1: 0,621 us/op
+Iteration   1: 0,605 us/op
+Iteration   2: 0,605 us/op
+
+# Run progress: 54,16% complete, ETA 00:05:41
+# Fork: 1 of 1
+# Warmup Iteration   1: 0,636 us/op
+Iteration   1: 0,618 us/op
+Iteration   2: 0,627 us/op
+
+
+Result "be.niedel.proto.comparison.serialization.SerializationComparisonService.serializeToJSONUtf8EncodedBytesUsingJackson":
+  0,622 us/op
+
+
+# JMH version: 1.25.2
+# VM version: JDK 14.0.1, OpenJDK 64-Bit Server VM, 14.0.1+7
+# VM invoker: C:\Program Files\Java\jdk-14.0.1\bin\java.exe
+# VM options: -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2020.1.1\lib\idea_rt.jar=63711:C:\Program Files\JetBrains\IntelliJ IDEA 2020.1.1\bin -Dfile.encoding=UTF-8
+# Warmup: 1 iterations, 10 s each
+# Measurement: 2 iterations, 10 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: be.niedel.proto.comparison.serialization.SerializationComparisonService.serializeToProtoEncodedBytes
+
+# Run progress: 58,33% complete, ETA 00:05:10
+# Warmup Fork: 1 of 1
+# Warmup Iteration   1: 0,200 us/op
+Iteration   1: 0,201 us/op
+Iteration   2: 0,200 us/op
+
+# Run progress: 62,50% complete, ETA 00:04:39
+# Fork: 1 of 1
+# Warmup Iteration   1: 0,202 us/op
+Iteration   1: 0,199 us/op
+Iteration   2: 0,199 us/op
+
+
+Result "be.niedel.proto.comparison.serialization.SerializationComparisonService.serializeToProtoEncodedBytes":
+  0,199 us/op
+
+
+# JMH version: 1.25.2
+# VM version: JDK 14.0.1, OpenJDK 64-Bit Server VM, 14.0.1+7
+# VM invoker: C:\Program Files\Java\jdk-14.0.1\bin\java.exe
+# VM options: -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2020.1.1\lib\idea_rt.jar=63711:C:\Program Files\JetBrains\IntelliJ IDEA 2020.1.1\bin -Dfile.encoding=UTF-8
+# Warmup: 1 iterations, 10 s each
+# Measurement: 2 iterations, 10 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Sampling time
+# Benchmark: be.niedel.proto.comparison.serialization.SerializationComparisonService.serializeToJSONStringUsingJackson
+
+# Run progress: 66,66% complete, ETA 00:04:08
+# Warmup Fork: 1 of 1
+# Warmup Iteration   1: 0,804 ±(99.9%) 0,368 us/op
+Iteration   1: 0,651 ±(99.9%) 0,037 us/op
+                 serializeToJSONStringUsingJackson·p0.00:   0,500 us/op
+                 serializeToJSONStringUsingJackson·p0.50:   0,600 us/op
+                 serializeToJSONStringUsingJackson·p0.90:   0,700 us/op
+                 serializeToJSONStringUsingJackson·p0.95:   0,700 us/op
+                 serializeToJSONStringUsingJackson·p0.99:   0,900 us/op
+                 serializeToJSONStringUsingJackson·p0.999:  3,593 us/op
+                 serializeToJSONStringUsingJackson·p0.9999: 28,287 us/op
+                 serializeToJSONStringUsingJackson·p1.00:   1312,768 us/op
+
+Iteration   2: 0,659 ±(99.9%) 0,032 us/op
+                 serializeToJSONStringUsingJackson·p0.00:   0,500 us/op
+                 serializeToJSONStringUsingJackson·p0.50:   0,600 us/op
+                 serializeToJSONStringUsingJackson·p0.90:   0,700 us/op
+                 serializeToJSONStringUsingJackson·p0.95:   0,700 us/op
+                 serializeToJSONStringUsingJackson·p0.99:   1,400 us/op
+                 serializeToJSONStringUsingJackson·p0.999:  5,597 us/op
+                 serializeToJSONStringUsingJackson·p0.9999: 28,345 us/op
+                 serializeToJSONStringUsingJackson·p1.00:   1302,528 us/op
+
+
+# Run progress: 70,83% complete, ETA 00:03:37
+# Fork: 1 of 1
+# Warmup Iteration   1: 0,808 ±(99.9%) 0,375 us/op
+Iteration   1: 0,641 ±(99.9%) 0,025 us/op
+                 serializeToJSONStringUsingJackson·p0.00:   0,500 us/op
+                 serializeToJSONStringUsingJackson·p0.50:   0,600 us/op
+                 serializeToJSONStringUsingJackson·p0.90:   0,700 us/op
+                 serializeToJSONStringUsingJackson·p0.95:   0,700 us/op
+                 serializeToJSONStringUsingJackson·p0.99:   1,000 us/op
+                 serializeToJSONStringUsingJackson·p0.999:  4,200 us/op
+                 serializeToJSONStringUsingJackson·p0.9999: 28,218 us/op
+                 serializeToJSONStringUsingJackson·p1.00:   1155,072 us/op
+
+Iteration   2: 0,653 ±(99.9%) 0,036 us/op
+                 serializeToJSONStringUsingJackson·p0.00:   0,500 us/op
+                 serializeToJSONStringUsingJackson·p0.50:   0,600 us/op
+                 serializeToJSONStringUsingJackson·p0.90:   0,700 us/op
+                 serializeToJSONStringUsingJackson·p0.95:   0,700 us/op
+                 serializeToJSONStringUsingJackson·p0.99:   0,900 us/op
+                 serializeToJSONStringUsingJackson·p0.999:  3,100 us/op
+                 serializeToJSONStringUsingJackson·p0.9999: 27,872 us/op
+                 serializeToJSONStringUsingJackson·p1.00:   1198,080 us/op
+
+
+
+Result "be.niedel.proto.comparison.serialization.SerializationComparisonService.serializeToJSONStringUsingJackson":
+  N = 514767
+  mean =      0,647 ±(99.9%) 0,022 us/op
+
+  Histogram, us/op:
+    [   0,000,  125,000) = 514756
+    [ 125,000,  250,000) = 2
+    [ 250,000,  375,000) = 0
+    [ 375,000,  500,000) = 0
+    [ 500,000,  625,000) = 0
+    [ 625,000,  750,000) = 0
+    [ 750,000,  875,000) = 0
+    [ 875,000, 1000,000) = 1
+    [1000,000, 1125,000) = 2
+    [1125,000, 1250,000) = 6
+    [1250,000, 1375,000) = 0
+    [1375,000, 1500,000) = 0
+    [1500,000, 1625,000) = 0
+    [1625,000, 1750,000) = 0
+    [1750,000, 1875,000) = 0
+
+  Percentiles, us/op:
+      p(0,0000) =      0,500 us/op
+     p(50,0000) =      0,600 us/op
+     p(90,0000) =      0,700 us/op
+     p(95,0000) =      0,700 us/op
+     p(99,0000) =      0,900 us/op
+     p(99,9000) =      3,400 us/op
+     p(99,9900) =     28,000 us/op
+     p(99,9990) =   1145,601 us/op
+     p(99,9999) =   1198,080 us/op
+    p(100,0000) =   1198,080 us/op
+
+
+# JMH version: 1.25.2
+# VM version: JDK 14.0.1, OpenJDK 64-Bit Server VM, 14.0.1+7
+# VM invoker: C:\Program Files\Java\jdk-14.0.1\bin\java.exe
+# VM options: -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2020.1.1\lib\idea_rt.jar=63711:C:\Program Files\JetBrains\IntelliJ IDEA 2020.1.1\bin -Dfile.encoding=UTF-8
+# Warmup: 1 iterations, 10 s each
+# Measurement: 2 iterations, 10 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Sampling time
+# Benchmark: be.niedel.proto.comparison.serialization.SerializationComparisonService.serializeToJSONStringUsingProtoJsonPrinter
+
+# Run progress: 75,00% complete, ETA 00:03:06
+# Warmup Fork: 1 of 1
+# Warmup Iteration   1: 4,087 ±(99.9%) 0,737 us/op
+Iteration   1: 3,691 ±(99.9%) 0,056 us/op
+                 serializeToJSONStringUsingProtoJsonPrinter·p0.00:   3,300 us/op
+                 serializeToJSONStringUsingProtoJsonPrinter·p0.50:   3,400 us/op
+                 serializeToJSONStringUsingProtoJsonPrinter·p0.90:   3,900 us/op
+                 serializeToJSONStringUsingProtoJsonPrinter·p0.95:   4,296 us/op
+                 serializeToJSONStringUsingProtoJsonPrinter·p0.99:   6,096 us/op
+                 serializeToJSONStringUsingProtoJsonPrinter·p0.999:  24,343 us/op
+                 serializeToJSONStringUsingProtoJsonPrinter·p0.9999: 58,119 us/op
+                 serializeToJSONStringUsingProtoJsonPrinter·p1.00:   1312,768 us/op
+
+Iteration   2: 3,704 ±(99.9%) 0,057 us/op
+                 serializeToJSONStringUsingProtoJsonPrinter·p0.00:   3,200 us/op
+                 serializeToJSONStringUsingProtoJsonPrinter·p0.50:   3,400 us/op
+                 serializeToJSONStringUsingProtoJsonPrinter·p0.90:   3,900 us/op
+                 serializeToJSONStringUsingProtoJsonPrinter·p0.95:   4,000 us/op
+                 serializeToJSONStringUsingProtoJsonPrinter·p0.99:   6,000 us/op
+                 serializeToJSONStringUsingProtoJsonPrinter·p0.999:  23,872 us/op
+                 serializeToJSONStringUsingProtoJsonPrinter·p0.9999: 67,227 us/op
+                 serializeToJSONStringUsingProtoJsonPrinter·p1.00:   1343,488 us/op
+
+
+# Run progress: 79,16% complete, ETA 00:02:35
+# Fork: 1 of 1
+# Warmup Iteration   1: 4,029 ±(99.9%) 0,739 us/op
+Iteration   1: 3,656 ±(99.9%) 0,057 us/op
+                 serializeToJSONStringUsingProtoJsonPrinter·p0.00:   3,200 us/op
+                 serializeToJSONStringUsingProtoJsonPrinter·p0.50:   3,400 us/op
+                 serializeToJSONStringUsingProtoJsonPrinter·p0.90:   3,800 us/op
+                 serializeToJSONStringUsingProtoJsonPrinter·p0.95:   4,296 us/op
+                 serializeToJSONStringUsingProtoJsonPrinter·p0.99:   5,896 us/op
+                 serializeToJSONStringUsingProtoJsonPrinter·p0.999:  24,096 us/op
+                 serializeToJSONStringUsingProtoJsonPrinter·p0.9999: 75,223 us/op
+                 serializeToJSONStringUsingProtoJsonPrinter·p1.00:   1359,872 us/op
+
+Iteration   2: 3,709 ±(99.9%) 0,059 us/op
+                 serializeToJSONStringUsingProtoJsonPrinter·p0.00:   3,200 us/op
+                 serializeToJSONStringUsingProtoJsonPrinter·p0.50:   3,400 us/op
+                 serializeToJSONStringUsingProtoJsonPrinter·p0.90:   3,900 us/op
+                 serializeToJSONStringUsingProtoJsonPrinter·p0.95:   4,200 us/op
+                 serializeToJSONStringUsingProtoJsonPrinter·p0.99:   6,096 us/op
+                 serializeToJSONStringUsingProtoJsonPrinter·p0.999:  25,216 us/op
+                 serializeToJSONStringUsingProtoJsonPrinter·p0.9999: 86,042 us/op
+                 serializeToJSONStringUsingProtoJsonPrinter·p1.00:   1355,776 us/op
+
+
+
+Result "be.niedel.proto.comparison.serialization.SerializationComparisonService.serializeToJSONStringUsingProtoJsonPrinter":
+  N = 692378
+  mean =      3,682 ±(99.9%) 0,041 us/op
+
+  Histogram, us/op:
+    [   0,000,  125,000) = 692320
+    [ 125,000,  250,000) = 7
+    [ 250,000,  375,000) = 0
+    [ 375,000,  500,000) = 0
+    [ 500,000,  625,000) = 0
+    [ 625,000,  750,000) = 0
+    [ 750,000,  875,000) = 0
+    [ 875,000, 1000,000) = 1
+    [1000,000, 1125,000) = 9
+    [1125,000, 1250,000) = 23
+    [1250,000, 1375,000) = 18
+    [1375,000, 1500,000) = 0
+    [1500,000, 1625,000) = 0
+    [1625,000, 1750,000) = 0
+    [1750,000, 1875,000) = 0
+
+  Percentiles, us/op:
+      p(0,0000) =      3,200 us/op
+     p(50,0000) =      3,400 us/op
+     p(90,0000) =      3,900 us/op
+     p(95,0000) =      4,200 us/op
+     p(99,0000) =      6,000 us/op
+     p(99,9000) =     24,896 us/op
+     p(99,9900) =     74,703 us/op
+     p(99,9990) =   1307,560 us/op
+     p(99,9999) =   1359,872 us/op
+    p(100,0000) =   1359,872 us/op
+
+
+# JMH version: 1.25.2
+# VM version: JDK 14.0.1, OpenJDK 64-Bit Server VM, 14.0.1+7
+# VM invoker: C:\Program Files\Java\jdk-14.0.1\bin\java.exe
+# VM options: -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2020.1.1\lib\idea_rt.jar=63711:C:\Program Files\JetBrains\IntelliJ IDEA 2020.1.1\bin -Dfile.encoding=UTF-8
+# Warmup: 1 iterations, 10 s each
+# Measurement: 2 iterations, 10 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Sampling time
+# Benchmark: be.niedel.proto.comparison.serialization.SerializationComparisonService.serializeToJSONUtf8EncodedBytesUsingJackson
+
+# Run progress: 83,33% complete, ETA 00:02:04
+# Warmup Fork: 1 of 1
+# Warmup Iteration   1: 0,854 ±(99.9%) 0,405 us/op
+Iteration   1: 0,683 ±(99.9%) 0,042 us/op
+                 serializeToJSONUtf8EncodedBytesUsingJackson·p0.00:   0,500 us/op
+                 serializeToJSONUtf8EncodedBytesUsingJackson·p0.50:   0,600 us/op
+                 serializeToJSONUtf8EncodedBytesUsingJackson·p0.90:   0,700 us/op
+                 serializeToJSONUtf8EncodedBytesUsingJackson·p0.95:   0,700 us/op
+                 serializeToJSONUtf8EncodedBytesUsingJackson·p0.99:   0,900 us/op
+                 serializeToJSONUtf8EncodedBytesUsingJackson·p0.999:  6,034 us/op
+                 serializeToJSONUtf8EncodedBytesUsingJackson·p0.9999: 28,678 us/op
+                 serializeToJSONUtf8EncodedBytesUsingJackson·p1.00:   1306,624 us/op
+
+Iteration   2: 0,670 ±(99.9%) 0,031 us/op
+                 serializeToJSONUtf8EncodedBytesUsingJackson·p0.00:   0,500 us/op
+                 serializeToJSONUtf8EncodedBytesUsingJackson·p0.50:   0,600 us/op
+                 serializeToJSONUtf8EncodedBytesUsingJackson·p0.90:   0,700 us/op
+                 serializeToJSONUtf8EncodedBytesUsingJackson·p0.95:   0,700 us/op
+                 serializeToJSONUtf8EncodedBytesUsingJackson·p0.99:   0,900 us/op
+                 serializeToJSONUtf8EncodedBytesUsingJackson·p0.999:  5,628 us/op
+                 serializeToJSONUtf8EncodedBytesUsingJackson·p0.9999: 28,591 us/op
+                 serializeToJSONUtf8EncodedBytesUsingJackson·p1.00:   1210,368 us/op
+
+
+# Run progress: 87,50% complete, ETA 00:01:33
+# Fork: 1 of 1
+# Warmup Iteration   1: 0,859 ±(99.9%) 0,396 us/op
+Iteration   1: 0,693 ±(99.9%) 0,039 us/op
+                 serializeToJSONUtf8EncodedBytesUsingJackson·p0.00:   0,500 us/op
+                 serializeToJSONUtf8EncodedBytesUsingJackson·p0.50:   0,600 us/op
+                 serializeToJSONUtf8EncodedBytesUsingJackson·p0.90:   0,700 us/op
+                 serializeToJSONUtf8EncodedBytesUsingJackson·p0.95:   0,700 us/op
+                 serializeToJSONUtf8EncodedBytesUsingJackson·p0.99:   1,000 us/op
+                 serializeToJSONUtf8EncodedBytesUsingJackson·p0.999:  4,698 us/op
+                 serializeToJSONUtf8EncodedBytesUsingJackson·p0.9999: 28,173 us/op
+                 serializeToJSONUtf8EncodedBytesUsingJackson·p1.00:   1282,048 us/op
+
+Iteration   2: 0,680 ±(99.9%) 0,036 us/op
+                 serializeToJSONUtf8EncodedBytesUsingJackson·p0.00:   0,500 us/op
+                 serializeToJSONUtf8EncodedBytesUsingJackson·p0.50:   0,600 us/op
+                 serializeToJSONUtf8EncodedBytesUsingJackson·p0.90:   0,700 us/op
+                 serializeToJSONUtf8EncodedBytesUsingJackson·p0.95:   0,700 us/op
+                 serializeToJSONUtf8EncodedBytesUsingJackson·p0.99:   1,000 us/op
+                 serializeToJSONUtf8EncodedBytesUsingJackson·p0.999:  4,157 us/op
+                 serializeToJSONUtf8EncodedBytesUsingJackson·p0.9999: 28,834 us/op
+                 serializeToJSONUtf8EncodedBytesUsingJackson·p1.00:   1214,464 us/op
+
+
+
+Result "be.niedel.proto.comparison.serialization.SerializationComparisonService.serializeToJSONUtf8EncodedBytesUsingJackson":
+  N = 488386
+  mean =      0,686 ±(99.9%) 0,027 us/op
+
+  Histogram, us/op:
+    [   0,000,  125,000) = 488373
+    [ 125,000,  250,000) = 1
+    [ 250,000,  375,000) = 0
+    [ 375,000,  500,000) = 0
+    [ 500,000,  625,000) = 0
+    [ 625,000,  750,000) = 1
+    [ 750,000,  875,000) = 0
+    [ 875,000, 1000,000) = 1
+    [1000,000, 1125,000) = 2
+    [1125,000, 1250,000) = 7
+    [1250,000, 1375,000) = 1
+    [1375,000, 1500,000) = 0
+    [1500,000, 1625,000) = 0
+    [1625,000, 1750,000) = 0
+    [1750,000, 1875,000) = 0
+
+  Percentiles, us/op:
+      p(0,0000) =      0,500 us/op
+     p(50,0000) =      0,600 us/op
+     p(90,0000) =      0,700 us/op
+     p(95,0000) =      0,700 us/op
+     p(99,0000) =      1,000 us/op
+     p(99,9000) =      4,400 us/op
+     p(99,9900) =     28,576 us/op
+     p(99,9990) =   1210,844 us/op
+     p(99,9999) =   1282,048 us/op
+    p(100,0000) =   1282,048 us/op
+
+
+# JMH version: 1.25.2
+# VM version: JDK 14.0.1, OpenJDK 64-Bit Server VM, 14.0.1+7
+# VM invoker: C:\Program Files\Java\jdk-14.0.1\bin\java.exe
+# VM options: -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2020.1.1\lib\idea_rt.jar=63711:C:\Program Files\JetBrains\IntelliJ IDEA 2020.1.1\bin -Dfile.encoding=UTF-8
+# Warmup: 1 iterations, 10 s each
+# Measurement: 2 iterations, 10 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Sampling time
+# Benchmark: be.niedel.proto.comparison.serialization.SerializationComparisonService.serializeToProtoEncodedBytes
+
+# Run progress: 91,66% complete, ETA 00:01:02
+# Warmup Fork: 1 of 1
+# Warmup Iteration   1: 0,271 ±(99.9%) 0,081 us/op
+Iteration   1: 0,234 ±(99.9%) 0,018 us/op
+                 serializeToProtoEncodedBytes·p0.00:   0,200 us/op
+                 serializeToProtoEncodedBytes·p0.50:   0,200 us/op
+                 serializeToProtoEncodedBytes·p0.90:   0,300 us/op
+                 serializeToProtoEncodedBytes·p0.95:   0,300 us/op
+                 serializeToProtoEncodedBytes·p0.99:   0,300 us/op
+                 serializeToProtoEncodedBytes·p0.999:  1,200 us/op
+                 serializeToProtoEncodedBytes·p0.9999: 22,866 us/op
+                 serializeToProtoEncodedBytes·p1.00:   1263,616 us/op
+
+Iteration   2: 0,233 ±(99.9%) 0,018 us/op
+                 serializeToProtoEncodedBytes·p0.00:   0,200 us/op
+                 serializeToProtoEncodedBytes·p0.50:   0,200 us/op
+                 serializeToProtoEncodedBytes·p0.90:   0,300 us/op
+                 serializeToProtoEncodedBytes·p0.95:   0,300 us/op
+                 serializeToProtoEncodedBytes·p0.99:   0,300 us/op
+                 serializeToProtoEncodedBytes·p0.999:  1,200 us/op
+                 serializeToProtoEncodedBytes·p0.9999: 24,443 us/op
+                 serializeToProtoEncodedBytes·p1.00:   1249,280 us/op
+
+
+# Run progress: 95,83% complete, ETA 00:00:31
+# Fork: 1 of 1
+# Warmup Iteration   1: 0,283 ±(99.9%) 0,094 us/op
+Iteration   1: 0,225 ±(99.9%) 0,003 us/op
+                 serializeToProtoEncodedBytes·p0.00:   0,200 us/op
+                 serializeToProtoEncodedBytes·p0.50:   0,200 us/op
+                 serializeToProtoEncodedBytes·p0.90:   0,300 us/op
+                 serializeToProtoEncodedBytes·p0.95:   0,300 us/op
+                 serializeToProtoEncodedBytes·p0.99:   0,300 us/op
+                 serializeToProtoEncodedBytes·p0.999:  0,700 us/op
+                 serializeToProtoEncodedBytes·p0.9999: 21,991 us/op
+                 serializeToProtoEncodedBytes·p1.00:   156,416 us/op
+
+Iteration   2: 0,225 ±(99.9%) 0,002 us/op
+                 serializeToProtoEncodedBytes·p0.00:   0,200 us/op
+                 serializeToProtoEncodedBytes·p0.50:   0,200 us/op
+                 serializeToProtoEncodedBytes·p0.90:   0,300 us/op
+                 serializeToProtoEncodedBytes·p0.95:   0,300 us/op
+                 serializeToProtoEncodedBytes·p0.99:   0,300 us/op
+                 serializeToProtoEncodedBytes·p0.999:  0,600 us/op
+                 serializeToProtoEncodedBytes·p0.9999: 21,280 us/op
+                 serializeToProtoEncodedBytes·p1.00:   28,992 us/op
+
+
+
+Result "be.niedel.proto.comparison.serialization.SerializationComparisonService.serializeToProtoEncodedBytes":
+  N = 759626
+  mean =      0,225 ±(99.9%) 0,002 us/op
+
+  Histogram, us/op:
+    [  0,000,  12,500) = 759385
+    [ 12,500,  25,000) = 191
+    [ 25,000,  37,500) = 47
+    [ 37,500,  50,000) = 1
+    [ 50,000,  62,500) = 0
+    [ 62,500,  75,000) = 0
+    [ 75,000,  87,500) = 0
+    [ 87,500, 100,000) = 0
+    [100,000, 112,500) = 0
+    [112,500, 125,000) = 0
+    [125,000, 137,500) = 0
+    [137,500, 150,000) = 0
+    [150,000, 162,500) = 2
+    [162,500, 175,000) = 0
+    [175,000, 187,500) = 0
+
+  Percentiles, us/op:
+      p(0,0000) =      0,200 us/op
+     p(50,0000) =      0,200 us/op
+     p(90,0000) =      0,300 us/op
+     p(95,0000) =      0,300 us/op
+     p(99,0000) =      0,300 us/op
+     p(99,9000) =      0,600 us/op
+     p(99,9900) =     21,796 us/op
+     p(99,9990) =     28,896 us/op
+     p(99,9999) =    156,416 us/op
+    p(100,0000) =    156,416 us/op
+
+
+# JMH version: 1.25.2
+# VM version: JDK 14.0.1, OpenJDK 64-Bit Server VM, 14.0.1+7
+# VM invoker: C:\Program Files\Java\jdk-14.0.1\bin\java.exe
+# VM options: -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2020.1.1\lib\idea_rt.jar=63711:C:\Program Files\JetBrains\IntelliJ IDEA 2020.1.1\bin -Dfile.encoding=UTF-8
+# Warmup: 1 iterations, single-shot each
+# Measurement: 2 iterations, single-shot each
+# Timeout: 10 min per iteration
+# Threads: 1 thread
+# Benchmark mode: Single shot invocation time
+# Benchmark: be.niedel.proto.comparison.serialization.SerializationComparisonService.serializeToJSONStringUsingJackson
+
+# Run progress: 100,00% complete, ETA 00:00:00
+# Warmup Fork: 1 of 1
+# Warmup Iteration   1: 28023,100 us/op
+Iteration   1: 152,500 us/op
+Iteration   2: 120,600 us/op
+
+# Run progress: 100,00% complete, ETA 00:00:00
+# Fork: 1 of 1
+# Warmup Iteration   1: 28457,300 us/op
+Iteration   1: 154,300 us/op
+Iteration   2: 66,200 us/op
+
+
+
+# JMH version: 1.25.2
+# VM version: JDK 14.0.1, OpenJDK 64-Bit Server VM, 14.0.1+7
+# VM invoker: C:\Program Files\Java\jdk-14.0.1\bin\java.exe
+# VM options: -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2020.1.1\lib\idea_rt.jar=63711:C:\Program Files\JetBrains\IntelliJ IDEA 2020.1.1\bin -Dfile.encoding=UTF-8
+# Warmup: 1 iterations, single-shot each
+# Measurement: 2 iterations, single-shot each
+# Timeout: 10 min per iteration
+# Threads: 1 thread
+# Benchmark mode: Single shot invocation time
+# Benchmark: be.niedel.proto.comparison.serialization.SerializationComparisonService.serializeToJSONStringUsingProtoJsonPrinter
+
+# Run progress: 100,00% complete, ETA 00:00:00
+# Warmup Fork: 1 of 1
+# Warmup Iteration   1: 74704,700 us/op
+Iteration   1: 377,000 us/op
+Iteration   2: 272,800 us/op
+
+# Run progress: 100,00% complete, ETA 00:00:00
+# Fork: 1 of 1
+# Warmup Iteration   1: 79672,300 us/op
+Iteration   1: 322,100 us/op
+Iteration   2: 424,900 us/op
+
+
+
+# JMH version: 1.25.2
+# VM version: JDK 14.0.1, OpenJDK 64-Bit Server VM, 14.0.1+7
+# VM invoker: C:\Program Files\Java\jdk-14.0.1\bin\java.exe
+# VM options: -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2020.1.1\lib\idea_rt.jar=63711:C:\Program Files\JetBrains\IntelliJ IDEA 2020.1.1\bin -Dfile.encoding=UTF-8
+# Warmup: 1 iterations, single-shot each
+# Measurement: 2 iterations, single-shot each
+# Timeout: 10 min per iteration
+# Threads: 1 thread
+# Benchmark mode: Single shot invocation time
+# Benchmark: be.niedel.proto.comparison.serialization.SerializationComparisonService.serializeToJSONUtf8EncodedBytesUsingJackson
+
+# Run progress: 100,00% complete, ETA 00:00:00
+# Warmup Fork: 1 of 1
+# Warmup Iteration   1: 30547,100 us/op
+Iteration   1: 156,900 us/op
+Iteration   2: 73,300 us/op
+
+# Run progress: 100,00% complete, ETA 00:00:00
+# Fork: 1 of 1
+# Warmup Iteration   1: 28529,800 us/op
+Iteration   1: 154,100 us/op
+Iteration   2: 79,300 us/op
+
+
+
+# JMH version: 1.25.2
+# VM version: JDK 14.0.1, OpenJDK 64-Bit Server VM, 14.0.1+7
+# VM invoker: C:\Program Files\Java\jdk-14.0.1\bin\java.exe
+# VM options: -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2020.1.1\lib\idea_rt.jar=63711:C:\Program Files\JetBrains\IntelliJ IDEA 2020.1.1\bin -Dfile.encoding=UTF-8
+# Warmup: 1 iterations, single-shot each
+# Measurement: 2 iterations, single-shot each
+# Timeout: 10 min per iteration
+# Threads: 1 thread
+# Benchmark mode: Single shot invocation time
+# Benchmark: be.niedel.proto.comparison.serialization.SerializationComparisonService.serializeToProtoEncodedBytes
+
+# Run progress: 100,00% complete, ETA 00:00:00
+# Warmup Fork: 1 of 1
+# Warmup Iteration   1: 8759,100 us/op
+Iteration   1: 64,300 us/op
+Iteration   2: 67,100 us/op
+
+# Run progress: 100,00% complete, ETA 00:00:00
+# Fork: 1 of 1
+# Warmup Iteration   1: 10696,500 us/op
+Iteration   1: 47,300 us/op
+Iteration   2: 49,100 us/op
+
+
+
+# Run complete. Total time: 00:12:31
+
+REMEMBER: The numbers below are just data. To gain reusable insights, you need to follow up on
+why the numbers are the way they are. Use profilers (see -prof, -lprof), design factorial
+experiments, perform baseline and negative tests that provide experimental control, make sure
+the benchmarking environment is safe on JVM/OS/HW level, ask for reviews from the domain experts.
+Do not assume the numbers tell you what you want them to tell.
+
+Benchmark                                                                                                                         Mode     Cnt     Score   Error   Units
+SerializationComparisonService.serializeToJSONStringUsingJackson                                                                 thrpt       2     1,722          ops/us
+SerializationComparisonService.serializeToJSONStringUsingProtoJsonPrinter                                                        thrpt       2     0,275          ops/us
+SerializationComparisonService.serializeToJSONUtf8EncodedBytesUsingJackson                                                       thrpt       2     1,587          ops/us
+SerializationComparisonService.serializeToProtoEncodedBytes                                                                      thrpt       2     5,027          ops/us
+SerializationComparisonService.serializeToJSONStringUsingJackson                                                                  avgt       2     0,586           us/op
+SerializationComparisonService.serializeToJSONStringUsingProtoJsonPrinter                                                         avgt       2     3,626           us/op
+SerializationComparisonService.serializeToJSONUtf8EncodedBytesUsingJackson                                                        avgt       2     0,622           us/op
+SerializationComparisonService.serializeToProtoEncodedBytes                                                                       avgt       2     0,199           us/op
+SerializationComparisonService.serializeToJSONStringUsingJackson                                                                sample  514767     0,647 ± 0,022   us/op
+SerializationComparisonService.serializeToJSONStringUsingJackson:serializeToJSONStringUsingJackson·p0.00                        sample             0,500           us/op
+SerializationComparisonService.serializeToJSONStringUsingJackson:serializeToJSONStringUsingJackson·p0.50                        sample             0,600           us/op
+SerializationComparisonService.serializeToJSONStringUsingJackson:serializeToJSONStringUsingJackson·p0.90                        sample             0,700           us/op
+SerializationComparisonService.serializeToJSONStringUsingJackson:serializeToJSONStringUsingJackson·p0.95                        sample             0,700           us/op
+SerializationComparisonService.serializeToJSONStringUsingJackson:serializeToJSONStringUsingJackson·p0.99                        sample             0,900           us/op
+SerializationComparisonService.serializeToJSONStringUsingJackson:serializeToJSONStringUsingJackson·p0.999                       sample             3,400           us/op
+SerializationComparisonService.serializeToJSONStringUsingJackson:serializeToJSONStringUsingJackson·p0.9999                      sample            28,000           us/op
+SerializationComparisonService.serializeToJSONStringUsingJackson:serializeToJSONStringUsingJackson·p1.00                        sample          1198,080           us/op
+SerializationComparisonService.serializeToJSONStringUsingProtoJsonPrinter                                                       sample  692378     3,682 ± 0,041   us/op
+SerializationComparisonService.serializeToJSONStringUsingProtoJsonPrinter:serializeToJSONStringUsingProtoJsonPrinter·p0.00      sample             3,200           us/op
+SerializationComparisonService.serializeToJSONStringUsingProtoJsonPrinter:serializeToJSONStringUsingProtoJsonPrinter·p0.50      sample             3,400           us/op
+SerializationComparisonService.serializeToJSONStringUsingProtoJsonPrinter:serializeToJSONStringUsingProtoJsonPrinter·p0.90      sample             3,900           us/op
+SerializationComparisonService.serializeToJSONStringUsingProtoJsonPrinter:serializeToJSONStringUsingProtoJsonPrinter·p0.95      sample             4,200           us/op
+SerializationComparisonService.serializeToJSONStringUsingProtoJsonPrinter:serializeToJSONStringUsingProtoJsonPrinter·p0.99      sample             6,000           us/op
+SerializationComparisonService.serializeToJSONStringUsingProtoJsonPrinter:serializeToJSONStringUsingProtoJsonPrinter·p0.999     sample            24,896           us/op
+SerializationComparisonService.serializeToJSONStringUsingProtoJsonPrinter:serializeToJSONStringUsingProtoJsonPrinter·p0.9999    sample            74,703           us/op
+SerializationComparisonService.serializeToJSONStringUsingProtoJsonPrinter:serializeToJSONStringUsingProtoJsonPrinter·p1.00      sample          1359,872           us/op
+SerializationComparisonService.serializeToJSONUtf8EncodedBytesUsingJackson                                                      sample  488386     0,686 ± 0,027   us/op
+SerializationComparisonService.serializeToJSONUtf8EncodedBytesUsingJackson:serializeToJSONUtf8EncodedBytesUsingJackson·p0.00    sample             0,500           us/op
+SerializationComparisonService.serializeToJSONUtf8EncodedBytesUsingJackson:serializeToJSONUtf8EncodedBytesUsingJackson·p0.50    sample             0,600           us/op
+SerializationComparisonService.serializeToJSONUtf8EncodedBytesUsingJackson:serializeToJSONUtf8EncodedBytesUsingJackson·p0.90    sample             0,700           us/op
+SerializationComparisonService.serializeToJSONUtf8EncodedBytesUsingJackson:serializeToJSONUtf8EncodedBytesUsingJackson·p0.95    sample             0,700           us/op
+SerializationComparisonService.serializeToJSONUtf8EncodedBytesUsingJackson:serializeToJSONUtf8EncodedBytesUsingJackson·p0.99    sample             1,000           us/op
+SerializationComparisonService.serializeToJSONUtf8EncodedBytesUsingJackson:serializeToJSONUtf8EncodedBytesUsingJackson·p0.999   sample             4,400           us/op
+SerializationComparisonService.serializeToJSONUtf8EncodedBytesUsingJackson:serializeToJSONUtf8EncodedBytesUsingJackson·p0.9999  sample            28,576           us/op
+SerializationComparisonService.serializeToJSONUtf8EncodedBytesUsingJackson:serializeToJSONUtf8EncodedBytesUsingJackson·p1.00    sample          1282,048           us/op
+SerializationComparisonService.serializeToProtoEncodedBytes                                                                     sample  759626     0,225 ± 0,002   us/op
+SerializationComparisonService.serializeToProtoEncodedBytes:serializeToProtoEncodedBytes·p0.00                                  sample             0,200           us/op
+SerializationComparisonService.serializeToProtoEncodedBytes:serializeToProtoEncodedBytes·p0.50                                  sample             0,200           us/op
+SerializationComparisonService.serializeToProtoEncodedBytes:serializeToProtoEncodedBytes·p0.90                                  sample             0,300           us/op
+SerializationComparisonService.serializeToProtoEncodedBytes:serializeToProtoEncodedBytes·p0.95                                  sample             0,300           us/op
+SerializationComparisonService.serializeToProtoEncodedBytes:serializeToProtoEncodedBytes·p0.99                                  sample             0,300           us/op
+SerializationComparisonService.serializeToProtoEncodedBytes:serializeToProtoEncodedBytes·p0.999                                 sample             0,600           us/op
+SerializationComparisonService.serializeToProtoEncodedBytes:serializeToProtoEncodedBytes·p0.9999                                sample            21,796           us/op
+SerializationComparisonService.serializeToProtoEncodedBytes:serializeToProtoEncodedBytes·p1.00                                  sample           156,416           us/op
+SerializationComparisonService.serializeToJSONStringUsingJackson                                                                    ss       2   110,250           us/op
+SerializationComparisonService.serializeToJSONStringUsingProtoJsonPrinter                                                           ss       2   373,500           us/op
+SerializationComparisonService.serializeToJSONUtf8EncodedBytesUsingJackson                                                          ss       2   116,700           us/op
+SerializationComparisonService.serializeToProtoEncodedBytes                                                                         ss       2    48,200           us/op
+
+Process finished with exit code 0
