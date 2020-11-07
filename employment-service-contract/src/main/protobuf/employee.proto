@@ -8,6 +8,7 @@ message CreateEmployeeRequest {
   Id id = 1;
   Name name = 2;
   Address address = 3;
+  repeated string skills = 4;
 }
 
 message Name {

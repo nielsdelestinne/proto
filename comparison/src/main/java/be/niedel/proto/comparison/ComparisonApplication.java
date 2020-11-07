@@ -1,53 +1,62 @@
 package be.niedel.proto.comparison;
 
-import java.util.Arrays;
+import be.niedel.proto.employmentservice.contract.CreateEmployerRequest;
+import com.google.protobuf.GeneratedMessageV3;
+
+import static be.niedel.proto.comparison.ComparisonUtility.*;
 
 public class ComparisonApplication {
 
     public static void main(String[] args) {
-        var comparisonService = new SizeComparisonService();
-        var compressedSizeComparisonService = new CompressedSizeComparisonService();
-        var employerRequest = comparisonService.createEmployerRequest();
 
-        byte[] encodeFromStringToBytesUsingUtf8 = comparisonService.encodeFromStringToBytesUsingUtf8(employerRequest.toString());
-        byte[] encodeFromProtoGeneratedObjectToBytesUsingProtoEncoding = comparisonService.encodeFromProtoGeneratedObjectToBytesUsingProtoEncoding(employerRequest);
-        byte[] encodeFromJSONToBytesUsingUtf8 = comparisonService.encodeFromStringToBytesUsingUtf8(comparisonService.toJSON(employerRequest));
+        System.out.println("===============================\nMessage with zero duplication (outliner)\n===============================");
+        compressionComparison(createEmployerRequest());
+        System.out.println("\n===============================\nMessage with minimal duplication\n===============================");
+        compressionComparison(createEmployeeRequest("", 1));
+        System.out.println("\n===============================\nMessage with high duplication\n===============================");
+        compressionComparison(createEmployeeRequest("", 1000));
+        System.out.println("\n===============================\nMessage with majority of data being duplication (outliner)\n===============================");
+        compressionComparison(createEmployeeRequest("duplication duplication", 1000));
 
-        byte[] someText = comparisonService.encodeFromStringToBytesUsingUtf8("abcdef");
-        System.out.println("Size: " + Arrays.toString(someText).length());
-        System.out.println("Compressed size (GZIP): " + compressedSizeComparisonService.compressUsingGzip(someText).length);
-
-        byte[] someTextWithAlotOfDuplication = comparisonService.encodeFromStringToBytesUsingUtf8("abcdefabcdefabcdef");
-        System.out.println("Size: " + Arrays.toString(someTextWithAlotOfDuplication).length());
-        System.out.println("Compressed size (GZIP): " + compressedSizeComparisonService.compressUsingGzip(someTextWithAlotOfDuplication).length);
-
-        displayResults(
-                encodeFromStringToBytesUsingUtf8,
-                employerRequest.toString(),
-                "(A) Proto-generated object (toString) encoded to bytes using UTF-8");
-        System.out.println("Compressed size (GZIP): " + compressedSizeComparisonService.compressUsingGzip(encodeFromStringToBytesUsingUtf8).length);
-
-        displayResults(
-                encodeFromProtoGeneratedObjectToBytesUsingProtoEncoding,
-                new String(employerRequest.toByteArray()),
-                "(B) Proto-generated object encoded to bytes using Protobuf encoding");
-        System.out.println("Compressed size (GZIP): " + compressedSizeComparisonService.compressUsingGzip(encodeFromProtoGeneratedObjectToBytesUsingProtoEncoding).length);
-
-        displayResults(
-                encodeFromJSONToBytesUsingUtf8,
-                comparisonService.toJSON(employerRequest),
-                "(C) JSON (text) encoded to bytes using UTF-8 encoding");
-        System.out.println("Compressed size (GZIP): " + compressedSizeComparisonService.compressUsingGzip(encodeFromJSONToBytesUsingUtf8).length);
-
+        if (args != null && args.length >= 1 && "printExamples".equals(args[0])) {
+            printExamples();
+        }
     }
 
-    public static void displayResults(byte[] bytes, String employerRequest, String message) {
-        System.out.println("\n------------------------\n------------------------");
-        System.out.println(message);
-        System.out.println("------------------------");
-        System.out.println(employerRequest);
-        System.out.println("\nSize: " + bytes.length + " -> " + Arrays.toString(bytes));
-        System.out.println("------------------------");
+    private static void printExamples() {
+        System.out.println("\n-------------------\n");
+
+        CreateEmployerRequest employerRequest = createEmployerRequest();
+        System.out.println("(A) Proto-generated object (toString) encoded to bytes using UTF-8");
+        System.out.println(employerRequest.toString());
+        System.out.println("(B) Proto-generated object encoded to bytes using Protobuf encoding");
+        System.out.println(new String(employerRequest.toByteArray()));
+        System.out.println("(C) JSON (text) encoded to bytes using UTF-8 encoding");
+        System.out.println(toJSON(employerRequest));
+    }
+
+    private static void compressionComparison(GeneratedMessageV3 message) {
+        byte[] protoMessageEmployee = encodeFromProtoGeneratedMessageToBytesUsingProtoEncoding(message);
+        byte[] jsonMessageEmployee = encodeFromStringToBytesUsingUtf8(toJSON(message));
+        System.out.println(String.format("Proto encoded - Size (uncompressed):\t\t\t %d bytes", protoMessageEmployee.length));
+        System.out.println(String.format("Proto encoded - Size (gzip):\t\t\t\t\t %d bytes", compressUsingGzip(protoMessageEmployee).length));
+        printSizeDifferenceFactor("uncompressed", "gzip", protoMessageEmployee.length * 1.0 / compressUsingGzip(protoMessageEmployee).length);
+
+        System.out.println(String.format("JSON (UTF-8) encoded - Size (uncompressed):\t\t %d bytes", jsonMessageEmployee.length));
+        System.out.println(String.format("JSON (UTF-8) encoded - Size (gzip):\t\t\t\t %d bytes", compressUsingGzip(jsonMessageEmployee).length));
+        printSizeDifferenceFactor("uncompressed", "gzip", jsonMessageEmployee.length * 1.0 / compressUsingGzip(jsonMessageEmployee).length);
+
+        printSizeDifferenceFactor("JSON (uncompressed)", "Proto (uncompressed)", jsonMessageEmployee.length * 1.0 / protoMessageEmployee.length);
+        printSizeDifferenceFactor("JSON (gzip)", "Proto (gzip)", compressUsingGzip(jsonMessageEmployee).length * 1.0 / compressUsingGzip(protoMessageEmployee).length);
+    }
+
+    private static void printSizeDifferenceFactor(String bigger, String smaller, double compressionFactor) {
+        String message = String.format("Size difference factor:\t\t\t\t\t\t\t %s is %.3f times smaller than %s", smaller, compressionFactor, bigger);
+        if ((compressionFactor < 1)) {
+            System.out.println(message + " (!!)");
+        } else {
+            System.out.println(message);
+        }
     }
 
 }

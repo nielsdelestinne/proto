@@ -13,7 +13,7 @@
     <artifactId>comparison</artifactId>
 
     <properties>
-        <employment-service-contract.version>2.0.0</employment-service-contract.version>
+        <employment-service-contract.version>2.1.0</employment-service-contract.version>
         <protobuf-java.version>3.13.0</protobuf-java.version>
     </properties>
 
