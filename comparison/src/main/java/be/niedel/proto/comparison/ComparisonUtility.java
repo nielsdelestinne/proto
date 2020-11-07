@@ -16,7 +16,7 @@ import java.util.zip.GZIPOutputStream;
 import static be.niedel.proto.employmentservice.contract.EmployerSize.MEDIUM;
 import static java.nio.charset.StandardCharsets.UTF_8;
 
-public class SizeAndCompressionComparisonUtility {
+public class ComparisonUtility {
 
     public static byte[] encodeFromStringToBytesUsingUtf8(String objectToString) {
         return objectToString.getBytes(UTF_8);

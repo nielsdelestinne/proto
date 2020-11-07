@@ -112,6 +112,10 @@ the proto encoded object counts 35 bytes.
 However, in other scenarios such as is the case in `ComparisonApplication`, the size actually increased from 35 -> 55 bytes
 - JSON went down from 125 to 123 bytes after compression  
 
+### Deserialization performance
+Measured using JMH: see `DeserializationComparisonApplication` & `x-results.txt` files.
+- http://tutorials.jenkov.com/java-performance/jmh.html
+
 ### Questions
 
 Open questions:

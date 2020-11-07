@@ -1,11 +1,11 @@
-package be.niedel.proto.comparison;
+package be.niedel.proto.comparison.sizeandcompression;
 
 import be.niedel.proto.employmentservice.contract.CreateEmployerRequest;
 import com.google.protobuf.GeneratedMessageV3;
 
-import static be.niedel.proto.comparison.SizeAndCompressionComparisonUtility.*;
+import static be.niedel.proto.comparison.ComparisonUtility.*;
 
-public class ComparisonApplication {
+public class SizeAndCompressionComparisonApplication {
 
     public static void main(String[] args) {
 
