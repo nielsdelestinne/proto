@@ -158,3 +158,8 @@ but you'd still like to use code created with the old format, don't worry! It's 
 ### Comparing with Avro and others
 - https://martin.kleppmann.com/2012/12/05/schema-evolution-in-avro-protocol-buffers-thrift.html
 - https://capnproto.org/index.html
+
+### Additional downsides
+- A protobuf message needs to be decoded entirely before being accessed (loaded into RAM entirely, even if only portion of message is used)
+    - So, protobuf doesn't have a hard size-limitation, but as a rule of thumb 1mb is used (but 10mb might be find to as long as the decoded message fits into the memory)
+    - Cap'n proto offers random access, GSON library supports streaming or even mixed reads (using both streaming and object model reading at the same time): https://sites.google.com/site/gson/streaming  
