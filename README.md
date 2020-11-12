@@ -162,4 +162,39 @@ but you'd still like to use code created with the old format, don't worry! It's 
 ### Additional downsides
 - A protobuf message needs to be decoded entirely before being accessed (loaded into RAM entirely, even if only portion of message is used)
     - So, protobuf doesn't have a hard size-limitation, but as a rule of thumb 1mb is used (but 10mb might be find to as long as the decoded message fits into the memory)
+    - Great answer by one of the creators of Protobuf and Cap'n proto on this issue
+        ```
+        Does the performance of encoding/decoding suffer horribly at large sizes (around ~10MB)..?
+      
+        10MB is pushing it but you'll probably be OK.
+        
+        Protobuf has a hard limit of 2GB, because many implementations use 32-bit signed arithmetic. 
+      For security reasons, many implementations (especially the Google-provided ones) impose a size limit 
+      of 64MB by default, although you can increase this limit manually if you need to.
+        
+        The implementation will not "slow down" with large messages per se, but the problem is that you must 
+      always parse an entire message at once before you can start using any of the content. 
+      This means the entire message must fit into RAM (keeping in mind that after parsing the in-memory message 
+      objects are much larger than the original serialized message), and even if you only care about one field 
+      you have to wait for the whole thing to parse.
+        
+        Generally I recommend trying to limit yourself to 1MB as a rule of thumb. Beyond that, think about splitting 
+      the message up into multiple chunks that can be parsed independently. However, every application -- for some, 
+      10MB is no big deal, for others 1MB is already way too large. You'll have to profile your own app to find out.
+        
+        I've actually seen cases where people were happy sending messages larger than 1GB, so... it "works".
+        
+        On a side note, Cap'n Proto has a very similar design to Protobuf but can support messages up to 2^64 bytes 
+      (2^32 segments of 4GB each), and it actually does allow you to read one field from the message without parsing 
+      the whole message (if it's in a file on disk, use mmap() to avoid reading the whole thing in).
+        
+        (Disclosure: I'm the author of Cap'n Proto as well as most of Google's open source Protobuf code.)
+      
+        (other answer)
+        I don't think the protobuf compiler will ever complain about message sizes. Atleast not until you get to 
+      the 18 exabyte maximum of uint64_t.
+      
+        For most implementations, performance starts to suffer at the point where the message cannot fit into RAM at once. 
+      So 10 MB should be fine, 10 GB not. Another possible issue is if you don't need all of the data - protobuf does not support random access, so you need to decode the whole message even if you only need a part of it.
+        ```
     - Cap'n proto offers random access, GSON library supports streaming or even mixed reads (using both streaming and object model reading at the same time): https://sites.google.com/site/gson/streaming  
